@@ -39,7 +39,7 @@ library(jsonlite)
 
 categories = c("MT1", "CS2","PS3","SC4", "AC5","PK6","OL7","SW8","BK9","CT1",
                "AG2","PO3","AT4","AD5","FD6","CE7","HP8","PM9")
-api_key <- read.csv("Project/kakao_api_key.txt",skip = 1,header = FALSE,
+api_key <- read.csv("kakao_api_key.txt",skip = 1,header = FALSE,
                     stringsAsFactors = FALSE)[1,1]
 url <- "https://dapi.kakao.com/v2/local/search/category.json"
 
@@ -134,7 +134,7 @@ get_total_count <- function(category_group_code=
                                 c("MT1", "CS2","PS3","SC4", "AC5","PK6","OL7",
                                   "SW8","BK9","CT1","AG2","PO3","AT4","AD5",
                                   "FD6","CE7","HP8","PM9")[16], x, y, 
-                            radius=5000,sort=c("distance","accuracy")){
+                            radius=5000,sort=c("distance","accuracy")[2]){
     request_url <- paste0(url,
                           "?category_group_code=",category_group_code,
                           "&x=",x,"&y=",y,"&radius=",radius,

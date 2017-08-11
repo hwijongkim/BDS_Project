@@ -7,7 +7,7 @@
 ## 재산번호, address 컬럼만 포함
 make_subset <- function(df){
     sub1 <- df[!is.na(data$재산면적),c("재산번호","실지목명",
-                                   "공부지목명","address","재산면적")]
+                                   "공부지목명","address","재산면적","longitude","latitude")]
     sub2 <- sub1[sub1$실지목명!='도로'&sub1$공부지목명!='도로',]
     sub3 <- sub2[,-c(2,3)]
     return(sub3)
@@ -29,8 +29,8 @@ sum_by_category <- function(df){
     totals_ <- data.frame()
     start <- Sys.time()
     for(i in 1:nrow(df)){
-        x = df$x[i]
-        y = df$y[i]
+        x = df$longitude[i]
+        y = df$latitude[i]
         counts_ <- c()
         for(j in 1:length(categories)){
             counts_ <- c(counts_,get_total_count(categories[j],x,y,radius=5000))
