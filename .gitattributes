@@ -1,0 +1,2 @@
+APMM_NV_LAND_2017_41_201706.txt filter=lfs diff=lfs merge=lfs -text
+*.txt filter=lfs diff=lfs merge=lfs -text

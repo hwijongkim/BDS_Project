@@ -23,7 +23,7 @@ make_subset <- function(df){
 # str(sub2)
 
 ## nearbysearch -> compute sum by category
-source('using_kakaoapi.R')
+##source('using_kakaoapi.R')
 
 sum_by_category <- function(df){
     totals_ <- data.frame()
